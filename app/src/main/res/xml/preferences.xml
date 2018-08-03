@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="custom_tabs_switch"
+        android:title="@string/custom_tabs"
+        android:summary="@string/custom_tabs_description"/>
+
+</android.support.v7.preference.PreferenceScreen>
