@@ -28,9 +28,6 @@
             android:name=".services.ContactsActivity"
             android:label="@string/contacts" />
         <activity
-            android:name=".settings.SettingsActivity"
-            android:label="@string/settings" />
-        <activity
             android:name=".services.AboutActivity"
             android:label="@string/about" />
     </application>

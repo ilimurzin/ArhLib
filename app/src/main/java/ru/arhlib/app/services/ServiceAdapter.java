@@ -24,7 +24,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         mValues.add(new Service(R.drawable.ic_prolongation, R.string.prolongation));
         mValues.add(new Service(R.drawable.ic_contacts, R.string.contacts));
         mValues.add(new Service(R.drawable.ic_ask, R.string.ask_lawyer));
-        mValues.add(new Service(R.drawable.ic_settings, R.string.settings));
         mValues.add(new Service(R.drawable.ic_about, R.string.about));
         mListener = listener;
     }

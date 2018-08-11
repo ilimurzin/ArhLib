@@ -14,7 +14,6 @@ import ru.arhlib.app.services.AboutActivity;
 import ru.arhlib.app.services.ContactsActivity;
 import ru.arhlib.app.services.Service;
 import ru.arhlib.app.services.ServiceFragment;
-import ru.arhlib.app.settings.SettingsActivity;
 
 public class MainActivity
         extends AppCompatActivity
@@ -55,8 +54,6 @@ public class MainActivity
             MyWebViewClient.openUrl(this, getString(R.string.lawyer_url));
         } else if (item.name == R.string.prolongation) {
             MyWebViewClient.openUrl(this, getString(R.string.prolongation_url));
-        } else if (item.name == R.string.settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
         } else if (item.name == R.string.about) {
             startActivity(new Intent(this, AboutActivity.class));
         }

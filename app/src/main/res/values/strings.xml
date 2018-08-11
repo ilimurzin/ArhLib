@@ -7,18 +7,10 @@
     <string name="prolongation">Продление онлайн</string>
     <string name="contacts">Контакты</string>
     <string name="ask_lawyer">Вопрос юристу</string>
-    <string name="settings">Настройки</string>
     <string name="about">О приложении</string>
 
     <string name="post_image">картинка к новости</string>
     <string name="post_activity_title">Просмотр новости</string>
-
-    <string name="name">Имя</string>
-    <string name="email">E-mail</string>
-    <string name="question">Вопрос</string>
-
-    <string name="custom_tabs">Встроенный браузер</string>
-    <string name="custom_tabs_description">Открывать ссылки в приложении</string>
 
     <string name="webservice_error">Нет соединения</string>
     <string name="snackbar_update_button">Обновить</string>
