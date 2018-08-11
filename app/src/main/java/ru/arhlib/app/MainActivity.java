@@ -48,12 +48,14 @@ public class MainActivity
     public void onListFragmentInteraction(Service item) {
         if (item.name == R.string.catalog) {
             MyWebViewClient.openUrl(this, getString(R.string.catalog_url));
-        } else if (item.name == R.string.contacts) {
-            startActivity(new Intent(this, ContactsActivity.class));
-        } else if (item.name == R.string.ask_lawyer) {
-            MyWebViewClient.openUrl(this, getString(R.string.lawyer_url));
         } else if (item.name == R.string.prolongation) {
             MyWebViewClient.openUrl(this, getString(R.string.prolongation_url));
+        } else if (item.name == R.string.contacts) {
+            startActivity(new Intent(this, ContactsActivity.class));
+        } else if (item.name == R.string.virtual_help) {
+            MyWebViewClient.openUrl(this, getString(R.string.virtual_help_url));
+        } else if (item.name == R.string.ask_lawyer) {
+            MyWebViewClient.openUrl(this, getString(R.string.lawyer_url));
         } else if (item.name == R.string.about) {
             startActivity(new Intent(this, AboutActivity.class));
         }
