@@ -21,10 +21,9 @@ public class ContactsActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        String content = getString(R.string.contacts_html);
         WebView webView = findViewById(R.id.contacts_webview);
         webView.setWebViewClient(new MyWebViewClient());
-        webView.loadData(content, "text/html; charset=UTF-8", null);
+        webView.loadUrl("file:///android_res/raw/contacts.html");
     }
 
     @Override
