@@ -35,7 +35,6 @@ public class PostViewModel extends AndroidViewModel {
                 public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
                     if (response.isSuccessful()) {
                         new Thread(() -> {
-                            postDao.delete();
                             postDao.save(response.body());
                         }).start();
                     }

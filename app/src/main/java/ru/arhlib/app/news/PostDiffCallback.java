@@ -1,18 +1,16 @@
 package ru.arhlib.app.news;
 
-import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 
 public class PostDiffCallback extends DiffUtil.ItemCallback<Post> {
     @Override
-    public boolean areItemsTheSame(
-            @NonNull Post oldPost, @NonNull Post newPost) {
+    public boolean areItemsTheSame(Post oldPost, Post newPost) {
         return oldPost.id == newPost.id;
     }
+
     @Override
-    public boolean areContentsTheSame(
-            @NonNull Post oldPost, @NonNull Post newPost) {
-        return oldPost.title == newPost.title &&
-                oldPost.excerpt == newPost.excerpt;
+    public boolean areContentsTheSame(Post oldPost, Post newPost) {
+        return oldPost.getTitle().equals(newPost.getTitle()) &&
+                oldPost.getExcerpt().equals(newPost.getExcerpt());
     }
 }
