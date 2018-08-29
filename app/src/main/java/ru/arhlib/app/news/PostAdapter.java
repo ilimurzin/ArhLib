@@ -1,6 +1,5 @@
 package ru.arhlib.app.news;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.view.LayoutInflater;

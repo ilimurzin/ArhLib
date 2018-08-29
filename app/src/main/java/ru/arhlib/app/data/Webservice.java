@@ -7,7 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import ru.arhlib.app.afisha.Page;
-import ru.arhlib.app.news.Media;
 import ru.arhlib.app.news.Post;
 
 public interface Webservice {
