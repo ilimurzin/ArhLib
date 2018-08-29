@@ -40,10 +40,6 @@ public class AboutActivity extends AppCompatActivity {
         }
     }
 
-    public void contactDeveloper(View v) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.about_author_email))));
-    }
-
     public void showLicences(View v) {
         startActivity(new Intent(this, LicensesActivity.class));
     }

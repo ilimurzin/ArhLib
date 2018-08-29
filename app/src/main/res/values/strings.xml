@@ -14,11 +14,7 @@
     <string name="post_activity_title">Просмотр новости</string>
 
     <string name="webservice_error">Нет соединения</string>
-    <string name="snackbar_update_button">Обновить</string>
 
-    <string name="about_app_name">Муниципальное учреждение культуры «Централизованная библиотечная система»</string>
     <string name="about_version">Версия</string>
-    <string name="about_author">Связаться с разработчиком</string>
-    <string name="about_author_email">mailto:ilimurzin@ya.ru</string>
     <string name="about_licenses">Лицензии открытого ПО</string>
 </resources>
