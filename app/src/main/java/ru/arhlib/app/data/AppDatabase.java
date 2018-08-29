@@ -10,9 +10,10 @@ import ru.arhlib.app.afisha.PageDao;
 import ru.arhlib.app.news.Post;
 import ru.arhlib.app.news.PostDao;
 
-@Database(entities = {Post.class, Page.class}, version = 7, exportSchema = false)
+@Database(entities = {Post.class, Page.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract PostDao postDao();
+
     public abstract PageDao pageDao();
 
     private static AppDatabase sInstance;
@@ -22,7 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
             synchronized (AppDatabase.class) {
                 if (sInstance == null) {
                     sInstance = Room.databaseBuilder(context.getApplicationContext(),
-                            AppDatabase.class, "beta.db")
+                            AppDatabase.class, "db")
                             .fallbackToDestructiveMigration()
                             .build();
                 }
