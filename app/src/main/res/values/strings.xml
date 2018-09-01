@@ -12,6 +12,8 @@
 
     <string name="post_image">картинка к новости</string>
     <string name="post_activity_title">Просмотр новости</string>
+    <string name="post_share">Поделиться</string>
+    <string name="post_open_in_browser">Открыть в браузере</string>
 
     <string name="webservice_error">Нет соединения</string>
 

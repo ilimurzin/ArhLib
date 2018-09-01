@@ -64,6 +64,7 @@ public class MainActivity
     @Override
     public void onListFragmentInteraction(Post post) {
         Intent intent = new Intent(this, PostActivity.class);
+        intent.putExtra("link", post.link);
         intent.putExtra("title", post.getTitle());
         intent.putExtra("content", post.getContent());
         //intent.putExtra("imageUrl", post.getImageUrl());
