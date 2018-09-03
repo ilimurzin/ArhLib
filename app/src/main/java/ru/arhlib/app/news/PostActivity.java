@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import ru.arhlib.app.MyWebViewClient;
 import ru.arhlib.app.R;
@@ -30,15 +33,24 @@ public class PostActivity extends AppCompatActivity {
         link = intent.getStringExtra("link");
         String title = intent.getStringExtra("title");
         String content = intent.getStringExtra("content");
-        //String imageUrl = intent.getStringExtra("imageUrl");
+        String imageUrl = intent.getStringExtra("imageUrl");
 
         String style = "<style>" + getString(R.string.style_css) + "</style>";
         content = style + "<h1>" + title + "</h1>" + content;
-        //content = "<img width=\"100%\" src=\"" + imageUrl + "\">" + content; // temp
 
         WebView webView = findViewById(R.id.webView);
         webView.setWebViewClient(new MyWebViewClient());
         webView.loadData(content, "text/html; charset=UTF-8", null);
+
+        ImageView imageView = findViewById(R.id.imageView);
+        if (imageUrl != null) {
+            Picasso.get()
+                    .load(imageUrl)
+                    .centerCrop()
+                    .fit()
+                    .placeholder(R.color.colorPlaceholder)
+                    .into(imageView);
+        }
     }
 
     @Override
