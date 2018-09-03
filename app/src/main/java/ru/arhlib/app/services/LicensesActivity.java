@@ -14,14 +14,14 @@ public class LicensesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contacts_activity);
+        setContentView(R.layout.webview);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        WebView webView = findViewById(R.id.contacts_webview);
+        WebView webView = findViewById(R.id.webview);
         webView.setWebViewClient(new MyWebViewClient());
         webView.loadUrl("file:///android_asset/licenses.html");
     }

@@ -38,7 +38,7 @@ public class PostActivity extends AppCompatActivity {
         String style = "<style>" + getString(R.string.style_css) + "</style>";
         content = style + "<h1>" + title + "</h1>" + content;
 
-        WebView webView = findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webview);
         webView.setWebViewClient(new MyWebViewClient());
         webView.loadData(content, "text/html; charset=UTF-8", null);
 

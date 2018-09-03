@@ -20,7 +20,7 @@ public class AfishaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.afisha_fragment, container, false);
+        View view = inflater.inflate(R.layout.webview, container, false);
         WebView webView = view.findViewById(R.id.webview);
         webView.setWebViewClient(new MyWebViewClient());
         webView.setBackgroundColor(0);
