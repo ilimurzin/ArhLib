@@ -23,7 +23,7 @@ public class ContactsActivity extends AppCompatActivity {
 
         WebView webView = findViewById(R.id.contacts_webview);
         webView.setWebViewClient(new MyWebViewClient());
-        webView.loadUrl("file:///android_res/raw/contacts.html");
+        webView.loadUrl("file:///android_asset/contacts.html");
     }
 
     @Override

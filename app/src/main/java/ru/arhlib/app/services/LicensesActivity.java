@@ -23,7 +23,7 @@ public class LicensesActivity extends AppCompatActivity {
 
         WebView webView = findViewById(R.id.contacts_webview);
         webView.setWebViewClient(new MyWebViewClient());
-        webView.loadUrl("file:///android_res/raw/licenses.html");
+        webView.loadUrl("file:///android_asset/licenses.html");
     }
 
     @Override
