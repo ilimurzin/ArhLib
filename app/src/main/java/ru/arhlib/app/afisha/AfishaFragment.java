@@ -28,7 +28,7 @@ public class AfishaFragment extends Fragment {
         AfishaViewModel viewModel = ViewModelProviders.of(this).get(AfishaViewModel.class);
         viewModel.getPage(6671).observe(this, page -> {
             if (page != null) { // null on first start
-                String data = style + page.getContent().replace('\u00A0', ' ');
+                String data = style + page.getContent();
                 webView.loadData(data, "text/html; charset=UTF-8", null);
             }
         });
