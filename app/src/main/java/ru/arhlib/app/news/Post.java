@@ -59,10 +59,8 @@ public class Post {
         if (embed.featuredMedia[0] != null) {
             if (embed.featuredMedia[0].mediaDetails.sizes.mediumLarge != null) {
                 return embed.featuredMedia[0].mediaDetails.sizes.mediumLarge.url;
-            } else if (embed.featuredMedia[0].mediaDetails.sizes.medium != null) {
-                return embed.featuredMedia[0].mediaDetails.sizes.medium.url;
             } else {
-                return embed.featuredMedia[0].mediaDetails.sizes.thumbnail.url;
+                return embed.featuredMedia[0].sourceUrl;
             }
         }
         return null;
