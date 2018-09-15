@@ -13,8 +13,6 @@ import ru.arhlib.app.R;
 
 public class ServiceFragment extends Fragment {
 
-    private OnListFragmentInteractionListener mListener;
-
     public ServiceFragment() {
     }
 
@@ -27,30 +25,8 @@ public class ServiceFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new ServiceAdapter(mListener));
+            recyclerView.setAdapter(new ServiceAdapter());
         }
         return view;
-    }
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(Service item);
     }
 }
