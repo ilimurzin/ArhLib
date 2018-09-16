@@ -15,6 +15,8 @@ public class ServiceCallback {
             MyWebViewClient.openUrl(context, context.getString(R.string.catalog_url));
         } else if (service.name == R.string.prolongation) {
             MyWebViewClient.openUrl(context, context.getString(R.string.prolongation_url));
+        } else if (service.name == R.string.libraries_on_map) {
+            MyWebViewClient.openUrl(context, context.getString(R.string.map_url));
         } else if (service.name == R.string.contacts) {
             context.startActivity(new Intent(context, ContactsActivity.class));
         } else if (service.name == R.string.virtual_help) {
