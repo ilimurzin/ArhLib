@@ -15,8 +15,6 @@
     <string name="post_share">Поделиться</string>
     <string name="post_open_in_browser">Открыть в браузере</string>
 
-    <string name="webservice_error">Нет соединения</string>
-
     <string name="about_version">Версия</string>
     <string name="about_licenses">Лицензии открытого ПО</string>
 </resources>

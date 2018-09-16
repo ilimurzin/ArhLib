@@ -10,7 +10,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import ru.arhlib.app.MainActivity;
 import ru.arhlib.app.data.Api;
 import ru.arhlib.app.data.AppDatabase;
 import ru.arhlib.app.data.Webservice;
@@ -42,7 +41,6 @@ public class PostViewModel extends AndroidViewModel {
 
                 @Override
                 public void onFailure(Call<List<Post>> call, Throwable t) {
-                    MainActivity.webserviceErrorSnackbar.show();
                     call.clone().enqueue(this);
                 }
             });
