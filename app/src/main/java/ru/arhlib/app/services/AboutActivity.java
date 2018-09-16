@@ -1,6 +1,7 @@
 package ru.arhlib.app.services;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,10 @@ public class AboutActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void rateApplication(View v) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=ru.arhlib.app")));
     }
 
     public void showLicences(View v) {

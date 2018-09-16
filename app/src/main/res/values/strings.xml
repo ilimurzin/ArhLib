@@ -17,5 +17,6 @@
     <string name="post_open_in_browser">Открыть в браузере</string>
 
     <string name="about_version">Версия</string>
+    <string name="about_rate">Оценить приложение</string>
     <string name="about_licenses">Лицензии открытого ПО</string>
 </resources>
