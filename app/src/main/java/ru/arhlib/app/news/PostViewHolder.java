@@ -1,7 +1,6 @@
 package ru.arhlib.app.news;
 
-import android.support.v7.widget.RecyclerView;
-
+import androidx.recyclerview.widget.RecyclerView;
 import ru.arhlib.app.databinding.PostItemBinding;
 
 public class PostViewHolder extends RecyclerView.ViewHolder {

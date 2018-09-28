@@ -3,8 +3,6 @@ package ru.arhlib.app.news;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
@@ -12,6 +10,8 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import ru.arhlib.app.MyWebViewClient;
 import ru.arhlib.app.R;
 

@@ -1,12 +1,12 @@
 package ru.arhlib.app.news;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
-import android.support.annotation.NonNull;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

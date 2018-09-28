@@ -1,10 +1,10 @@
 package ru.arhlib.app.news;
 
-import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import androidx.databinding.BindingAdapter;
 import ru.arhlib.app.R;
 
 public class BindingAdapters {

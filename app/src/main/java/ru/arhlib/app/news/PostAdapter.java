@@ -1,10 +1,10 @@
 package ru.arhlib.app.news;
 
-import android.support.annotation.NonNull;
-import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ListAdapter;
 import ru.arhlib.app.databinding.PostItemBinding;
 
 public class PostAdapter extends ListAdapter<Post, PostViewHolder> {

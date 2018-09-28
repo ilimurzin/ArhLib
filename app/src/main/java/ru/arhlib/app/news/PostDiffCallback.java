@@ -1,6 +1,6 @@
 package ru.arhlib.app.news;
 
-import android.support.v7.util.DiffUtil;
+import androidx.recyclerview.widget.DiffUtil;
 
 public class PostDiffCallback extends DiffUtil.ItemCallback<Post> {
     @Override

@@ -1,13 +1,13 @@
 package ru.arhlib.app.news;
 
-import android.arch.persistence.room.TypeConverter;
-
 import com.google.gson.Gson;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+
+import androidx.room.TypeConverter;
 
 public class Converters {
     private static DateFormat simpleDateFormat;

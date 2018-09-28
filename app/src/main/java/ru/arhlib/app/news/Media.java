@@ -1,8 +1,8 @@
 package ru.arhlib.app.news;
 
-import android.arch.persistence.room.Embedded;
-
 import com.google.gson.annotations.SerializedName;
+
+import androidx.room.Embedded;
 
 public class Media {
     @SerializedName("source_url")
@@ -10,9 +10,11 @@ public class Media {
     @SerializedName("media_details")
     @Embedded
     MediaDetails mediaDetails;
+
     public static class MediaDetails {
         @Embedded
         Sizes sizes;
+
         public static class Sizes {
             @Embedded(prefix = "thumbnail")
             Size thumbnail;
@@ -21,6 +23,7 @@ public class Media {
             @SerializedName("medium_large")
             @Embedded(prefix = "medium_large")
             Size mediumLarge;
+
             public static class Size {
                 @SerializedName("source_url")
                 String url;
