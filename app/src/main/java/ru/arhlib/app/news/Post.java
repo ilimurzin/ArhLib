@@ -57,9 +57,9 @@ public class Post {
 
     public String getImageUrl() {
         if (embed.featuredMedia[0] != null) {
-            if (embed.featuredMedia[0].mediaDetails.sizes.mediumLarge != null) {
+            try {
                 return embed.featuredMedia[0].mediaDetails.sizes.mediumLarge.url;
-            } else {
+            } catch (NullPointerException e) {
                 return embed.featuredMedia[0].sourceUrl;
             }
         }
