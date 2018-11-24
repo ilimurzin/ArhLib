@@ -11,7 +11,7 @@ public class Api {
             synchronized (Api.class) {
                 if (sInstance == null) {
                     sInstance = new Retrofit.Builder()
-                            .baseUrl("https://arhlib.ru/wp-json/wp/v2/")
+                            .baseUrl("https://arhlib.ru/wp-json/")
                             .addConverterFactory(GsonConverterFactory.create())
                             .build()
                             .create(Webservice.class);

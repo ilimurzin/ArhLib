@@ -10,12 +10,12 @@ import ru.arhlib.app.afisha.Page;
 import ru.arhlib.app.news.Post;
 
 public interface Webservice {
-    @GET("pages/{page}")
+    @GET("wp/v2/pages/{page}")
     Call<Page> getPage(@Path("page") int pageId);
 
-    @GET("posts?_embed&per_page=20")
+    @GET("wp/v2/posts?_embed&per_page=20")
     Call<List<Post>> getPosts(@Query("page") int page);
 
-    @GET("posts?_embed")
+    @GET("wp/v2/posts?_embed")
     Call<List<Post>> searchPosts(@Query("search") String search, @Query("page") int page);
 }
