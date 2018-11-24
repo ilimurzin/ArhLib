@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import ru.arhlib.app.R;
 import ru.arhlib.app.databinding.ServiceItemBinding;
 
-public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder> {
+public class ServiceAdapter extends RecyclerView.Adapter<ServiceViewHolder> {
 
     private final List<Service> mValues;
 
@@ -28,14 +28,14 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ServiceItemBinding binding = ServiceItemBinding
                 .inflate(LayoutInflater.from(parent.getContext()), parent, false);
-        return new ViewHolder(binding);
+        return new ServiceViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ServiceViewHolder holder, int position) {
         holder.binding.setCallback(new ServiceCallback());
         holder.binding.setService(mValues.get(position));
         holder.binding.executePendingBindings();
@@ -44,15 +44,5 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
     @Override
     public int getItemCount() {
         return mValues.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        final ServiceItemBinding binding;
-
-        public ViewHolder(ServiceItemBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
     }
 }
