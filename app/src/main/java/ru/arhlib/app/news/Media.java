@@ -16,10 +16,6 @@ public class Media {
         Sizes sizes;
 
         public static class Sizes {
-            @Embedded(prefix = "thumbnail")
-            Size thumbnail;
-            @Embedded(prefix = "medium")
-            Size medium;
             @SerializedName("medium_large")
             @Embedded(prefix = "medium_large")
             Size mediumLarge;
