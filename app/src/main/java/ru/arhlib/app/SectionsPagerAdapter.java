@@ -3,7 +3,7 @@ package ru.arhlib.app;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import ru.arhlib.app.afisha.AfishaFragment;
+import ru.arhlib.app.actual.ActualFragment;
 import ru.arhlib.app.news.PostFragment;
 import ru.arhlib.app.services.ServiceFragment;
 
@@ -19,7 +19,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new PostFragment();
             case 1:
-                return new AfishaFragment();
+                return new ActualFragment();
             default:
                 return new ServiceFragment();
         }

@@ -33,6 +33,9 @@
         <activity
             android:name=".services.LicensesActivity"
             android:label="@string/about_licenses" />
+        <activity
+            android:name=".afisha.AfishaActivity"
+            android:label="@string/afisha" />
     </application>
 
 </manifest>

@@ -6,12 +6,15 @@ import android.view.View;
 
 import ru.arhlib.app.MyWebViewClient;
 import ru.arhlib.app.R;
+import ru.arhlib.app.afisha.AfishaActivity;
 
 public class ServiceCallback {
 
     public void onClick(View view, Service service) {
         Context context = view.getContext();
-        if (service.name == R.string.catalog) {
+        if (service.name == R.string.afisha) {
+            context.startActivity(new Intent(context, AfishaActivity.class));
+        } else if (service.name == R.string.catalog) {
             MyWebViewClient.openUrl(context, context.getString(R.string.catalog_url));
         } else if (service.name == R.string.prolongation) {
             MyWebViewClient.openUrl(context, context.getString(R.string.prolongation_url));

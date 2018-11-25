@@ -38,13 +38,13 @@
                 android:text="@string/news" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/afishaTab"
+                android:id="@+id/actualTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/afisha" />
+                android:text="@string/actual" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabItem3"
+                android:id="@+id/servicesTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/services" />

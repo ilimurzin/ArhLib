@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Библиотеки Архангельска</string>
     <string name="news">Новости</string>
+    <string name="actual">Актуальное</string>
     <string name="afisha">Афиша</string>
     <string name="services">Сервисы</string>
     <string name="catalog">Электронный каталог</string>

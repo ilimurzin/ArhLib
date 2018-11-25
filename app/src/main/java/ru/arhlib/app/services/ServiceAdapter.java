@@ -17,6 +17,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceViewHolder> {
 
     public ServiceAdapter() {
         mValues = new ArrayList<>();
+        mValues.add(new Service(R.drawable.ic_afisha, R.string.afisha));
         mValues.add(new Service(R.drawable.ic_catalog, R.string.catalog));
         mValues.add(new Service(R.drawable.ic_prolongation, R.string.prolongation));
         mValues.add(new Service(R.drawable.ic_location, R.string.libraries_on_map));
