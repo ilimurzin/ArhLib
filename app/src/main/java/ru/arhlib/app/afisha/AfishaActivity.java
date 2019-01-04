@@ -1,6 +1,9 @@
 package ru.arhlib.app.afisha;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 
@@ -37,10 +40,25 @@ public class AfishaActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.afisha_menu, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
+                return true;
+            case R.id.share:
+                startActivity(new Intent()
+                        .setAction(Intent.ACTION_SEND)
+                        .putExtra(Intent.EXTRA_TEXT, getString(R.string.afisha_url))
+                        .setType("text/plain"));
+                return true;
+            case R.id.browser:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.afisha_url))));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
