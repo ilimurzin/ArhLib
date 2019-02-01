@@ -40,7 +40,7 @@ public class PostActivity extends AppCompatActivity {
 
         WebView webView = findViewById(R.id.webview);
         webView.setWebViewClient(new MyWebViewClient());
-        webView.loadData(content, "text/html; charset=UTF-8", null);
+        webView.loadDataWithBaseURL("https://arhlib.ru/", content, "text/html; charset=UTF-8", "UTF-8", null);
 
         ImageView imageView = findViewById(R.id.imageView);
         if (imageUrl != null) {

@@ -34,7 +34,7 @@ public class AfishaActivity extends AppCompatActivity {
             // null on first start
             if (page != null) {
                 String data = style + page.getContent();
-                webView.loadData(data, "text/html; charset=UTF-8", null);
+                webView.loadDataWithBaseURL("https://arhlib.ru/", data, "text/html; charset=UTF-8", "UTF-8", null);
             }
         });
     }
