@@ -41,7 +41,7 @@ public class Post {
     }
 
     public String getDate() {
-        return Converters.dateParse(date);
+        return DateParser.parse(date);
     }
 
     public String getTitle() {
