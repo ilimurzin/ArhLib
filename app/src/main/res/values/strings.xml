@@ -20,4 +20,7 @@
     <string name="about_version">Версия</string>
     <string name="about_rate">Оценить приложение</string>
     <string name="about_licenses">Лицензии открытого ПО</string>
+
+    <string name="loading_error">Ошибка при загрузке</string>
+    <string name="retry">Повторить</string>
 </resources>
