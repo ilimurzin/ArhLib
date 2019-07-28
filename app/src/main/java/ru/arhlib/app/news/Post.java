@@ -9,8 +9,10 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+import ru.arhlib.app.actual.ActualItem;
+
 @Entity
-public class Post {
+public class Post implements ActualItem {
     @PrimaryKey
     public int id;
     @SerializedName("date")
@@ -65,6 +67,11 @@ public class Post {
             }
         }
         return null;
+    }
+
+    @Override
+    public int getType() {
+        return ActualItem.TYPE_POST;
     }
 
     public static class Rendered {

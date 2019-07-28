@@ -5,9 +5,11 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ListAdapter;
+
+import ru.arhlib.app.actual.ActualItemViewHolder;
 import ru.arhlib.app.databinding.PostItemBinding;
 
-public class PostAdapter extends ListAdapter<Post, PostViewHolder> {
+public class PostAdapter extends ListAdapter<Post, PostAdapter.PostViewHolder> {
 
     public PostAdapter() {
         super(new PostDiffCallback());
@@ -23,8 +25,14 @@ public class PostAdapter extends ListAdapter<Post, PostViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
-        holder.binding.setCallback(new PostCallback());
-        holder.binding.setPost(getItem(position));
-        holder.binding.executePendingBindings();
+        holder.postBinding.setCallback(new PostCallback());
+        holder.postBinding.setPost(getItem(position));
+        holder.postBinding.executePendingBindings();
+    }
+
+    class PostViewHolder extends ActualItemViewHolder {
+        PostViewHolder(PostItemBinding binding) {
+            super(binding);
+        }
     }
 }

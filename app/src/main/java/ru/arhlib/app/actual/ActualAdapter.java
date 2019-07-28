@@ -5,9 +5,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ListAdapter;
+
 import ru.arhlib.app.databinding.ActualItemBinding;
 
-public class ActualAdapter extends ListAdapter<Actual, ActualViewHolder> {
+public class ActualAdapter extends ListAdapter<Actual, ActualAdapter.ActualViewHolder> {
 
     public ActualAdapter() {
         super(new ActualDiffCallback());
@@ -23,8 +24,14 @@ public class ActualAdapter extends ListAdapter<Actual, ActualViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ActualViewHolder holder, int position) {
-        holder.binding.setCallback(new ActualCallback());
-        holder.binding.setActual(getItem(position));
-        holder.binding.executePendingBindings();
+        holder.actualBinding.setCallback(new ActualCallback());
+        holder.actualBinding.setActual(getItem(position));
+        holder.actualBinding.executePendingBindings();
+    }
+
+    class ActualViewHolder extends ActualItemViewHolder {
+        ActualViewHolder(ActualItemBinding binding) {
+            super(binding);
+        }
     }
 }

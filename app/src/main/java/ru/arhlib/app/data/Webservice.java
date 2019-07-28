@@ -17,6 +17,9 @@ public interface Webservice {
     @GET("wp/v2/posts?_embed&per_page=20")
     Call<List<Post>> getPosts(@Query("page") int page);
 
+    @GET("wp/v2/posts?_embed&per_page=20&sticky=true")
+    Call<List<Post>> getStickyPosts();
+
     @GET("wp/v2/posts?_embed")
     Call<List<Post>> searchPosts(@Query("search") String search, @Query("page") int page);
 

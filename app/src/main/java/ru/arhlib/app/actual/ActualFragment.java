@@ -29,7 +29,7 @@ public class ActualFragment extends Fragment {
 
         ActualViewModel viewModel = ViewModelProviders.of(this).get(ActualViewModel.class);
         RecyclerView recyclerView = view.findViewById(R.id.actual_list);
-        ActualAdapter adapter = new ActualAdapter();
+        ActualItemAdapter adapter = new ActualItemAdapter();
         viewModel.actual.observe(this, adapter::submitList);
         viewModel.showErrorSnackbar.observe(this, (needToShow) -> {
             if (needToShow) {
