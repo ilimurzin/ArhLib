@@ -43,7 +43,7 @@ public class Post implements ActualItem {
     }
 
     public String getDate() {
-        return DateParser.parse(date);
+        return DateFormatter.format(date);
     }
 
     public String getTitle() {
