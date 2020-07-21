@@ -1,6 +1,7 @@
 package ru.arhlib.app.actual;
 
 public class Actual implements ActualItem {
+    public int id;
     public String emoji;
     public String title;
     public String description;
