@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import ru.arhlib.app.actual.ActualFragment;
 import ru.arhlib.app.news.PostFragment;
-import ru.arhlib.app.services.ServiceFragment;
+import ru.arhlib.app.menu.MenuFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -21,7 +21,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new ActualFragment();
             default:
-                return new ServiceFragment();
+                return new MenuFragment();
         }
     }
 

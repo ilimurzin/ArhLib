@@ -8,5 +8,5 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    tools:context=".services.ServiceFragment"
-    tools:listitem="@layout/service_item" />
+    tools:context=".menu.MenuFragment"
+    tools:listitem="@layout/menu_item" />

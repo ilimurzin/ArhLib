@@ -25,13 +25,13 @@
             android:name=".news.PostActivity"
             android:label="@string/post_activity_title" />
         <activity
-            android:name=".services.ContactsActivity"
+            android:name=".ContactsActivity"
             android:label="@string/contacts" />
         <activity
-            android:name=".services.AboutActivity"
+            android:name=".AboutActivity"
             android:label="@string/about" />
         <activity
-            android:name=".services.LicensesActivity"
+            android:name=".LicensesActivity"
             android:label="@string/about_licenses" />
         <activity
             android:name=".afisha.AfishaActivity"
