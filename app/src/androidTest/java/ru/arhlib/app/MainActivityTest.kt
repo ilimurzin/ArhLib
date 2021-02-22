@@ -14,7 +14,7 @@ import org.junit.runner.RunWith
 class MainActivityTest {
 
     @get:Rule
-    var rule: ActivityScenarioRule<MainActivity> = ActivityScenarioRule(MainActivity::class.java)
+    val rule: ActivityScenarioRule<MainActivity> = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun navigateThroughApplication() {

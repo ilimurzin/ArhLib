@@ -3,7 +3,6 @@ package ru.arhlib.app.afisha
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.arhlib.app.data.Api
 import ru.arhlib.app.data.Webservice
@@ -14,23 +13,22 @@ class AfishaViewModel : ViewModel() {
     val afisha = MutableLiveData<LoadResult<Page>>()
 
     init {
-        refresh()
+        load()
     }
 
-    fun refresh() {
+    fun load() {
         afisha.postValue(LoadResult.Loading)
 
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             try {
-                val response = webservice.getPage(6671).execute()
-                if (response.isSuccessful) {
-                    afisha.postValue(LoadResult.Success(response.body()!!))
-                } else {
-                    afisha.postValue(LoadResult.Error)
-                }
+                afisha.postValue(LoadResult.Success(getPage()))
             } catch (throwable: Throwable) {
                 afisha.postValue(LoadResult.Error)
             }
         }
+    }
+
+    private suspend fun getPage(): Page {
+        return webservice.getPage(6671)
     }
 }

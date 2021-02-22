@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.arhlib.app.AboutActivity
 import ru.arhlib.app.ContactsActivity
-import ru.arhlib.app.MyWebViewClient
 import ru.arhlib.app.R
 import ru.arhlib.app.afisha.AfishaActivity
+import ru.arhlib.app.browser.CustomTabs
 import ru.arhlib.app.databinding.MenuItemBinding
 
 class MenuAdapter : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
@@ -18,19 +18,19 @@ class MenuAdapter : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
                 v.context.startActivity(Intent(v.context, AfishaActivity::class.java))
             },
             MenuItem(R.drawable.ic_catalog, R.string.catalog) { v: View ->
-                MyWebViewClient.openUrl(v.context, v.context.getString(R.string.catalog_url))
+                CustomTabs.openUrl(v.context, v.context.getString(R.string.catalog_url))
             },
             MenuItem(R.drawable.ic_prolongation, R.string.prolongation) { v: View ->
-                MyWebViewClient.openUrl(v.context, v.context.getString(R.string.prolongation_url))
+                CustomTabs.openUrl(v.context, v.context.getString(R.string.prolongation_url))
             },
             MenuItem(R.drawable.ic_location, R.string.libraries_on_map) { v: View ->
-                MyWebViewClient.openUrl(v.context, v.context.getString(R.string.map_url))
+                CustomTabs.openUrl(v.context, v.context.getString(R.string.map_url))
             },
             MenuItem(R.drawable.ic_question, R.string.virtual_help) { v: View ->
-                MyWebViewClient.openUrl(v.context, v.context.getString(R.string.virtual_help_url))
+                CustomTabs.openUrl(v.context, v.context.getString(R.string.virtual_help_url))
             },
             MenuItem(R.drawable.ic_lawyer, R.string.ask_lawyer) { v: View ->
-                MyWebViewClient.openUrl(v.context, v.context.getString(R.string.lawyer_url))
+                CustomTabs.openUrl(v.context, v.context.getString(R.string.lawyer_url))
             },
             MenuItem(R.drawable.ic_contacts, R.string.contacts) { v: View ->
                 v.context.startActivity(Intent(v.context, ContactsActivity::class.java))

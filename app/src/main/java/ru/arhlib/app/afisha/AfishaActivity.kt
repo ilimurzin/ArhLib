@@ -6,11 +6,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import ru.arhlib.app.MyWebViewClient
+import androidx.core.view.isVisible
 import ru.arhlib.app.R
+import ru.arhlib.app.browser.WebViewClientWithCustomTabs
 import ru.arhlib.app.databinding.AfishaActivityBinding
 
 class AfishaActivity : AppCompatActivity() {
@@ -23,31 +23,21 @@ class AfishaActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.webview.webViewClient = MyWebViewClient()
+        binding.webview.webViewClient = WebViewClientWithCustomTabs()
         binding.webview.setBackgroundColor(Color.TRANSPARENT)
 
         viewModel.afisha.observe(this, { result ->
-            when (result) {
-                is LoadResult.Success<Page> -> {
-                    val data = getStyle() + result.data.getRenderedContent()
-                    binding.webview.loadDataWithBaseURL("https://arhlib.ru/", data, "text/html; charset=UTF-8", "UTF-8", null)
-
-                    binding.progressBar.visibility = View.GONE
-                    binding.retryBlock.visibility = View.GONE
-                }
-                is LoadResult.Loading -> {
-                    binding.progressBar.visibility = View.VISIBLE
-                    binding.retryBlock.visibility = View.GONE
-                }
-                is LoadResult.Error -> {
-                    binding.progressBar.visibility = View.GONE
-                    binding.retryBlock.visibility = View.VISIBLE
-                }
+            if (result is LoadResult.Success) {
+                val data = getStyle() + result.data.getRenderedContent()
+                binding.webview.loadDataWithBaseURL("https://arhlib.ru/", data, "text/html; charset=UTF-8", "UTF-8", null)
             }
+
+            binding.progressBar.isVisible = result is LoadResult.Loading
+            binding.retryBlock.isVisible = result is LoadResult.Error
         })
 
         binding.retryButton.setOnClickListener {
-            viewModel.refresh()
+            viewModel.load()
         }
     }
 

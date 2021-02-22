@@ -3,6 +3,7 @@ package ru.arhlib.app
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import ru.arhlib.app.browser.WebViewClientWithCustomTabs
 import ru.arhlib.app.databinding.WebviewBinding
 
 class ContactsActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class ContactsActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.webview.webViewClient = MyWebViewClient()
+        binding.webview.webViewClient = WebViewClientWithCustomTabs()
         binding.webview.loadUrl("file:///android_asset/contacts.html")
     }
 

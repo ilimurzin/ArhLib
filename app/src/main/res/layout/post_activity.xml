@@ -14,7 +14,8 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:contentDescription="@string/post_image" />
+            android:contentDescription="@string/post_image"
+            android:visibility="gone" />
 
         <WebView
             android:id="@+id/webview"
