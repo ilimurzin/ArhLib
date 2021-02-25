@@ -4,11 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.arhlib.app.data.Api
 import ru.arhlib.app.data.Webservice
 
 class AfishaViewModel : ViewModel() {
-    private val webservice: Webservice = Api.getInstance()
+    private val webservice: Webservice = Webservice.instance
 
     val afisha = MutableLiveData<LoadResult<Page>>()
 

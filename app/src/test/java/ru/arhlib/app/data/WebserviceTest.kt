@@ -8,7 +8,7 @@ import org.junit.Test
 
 class WebserviceTest {
     private val mockWebServer = MockWebServer()
-    private val webservice = Api.getInstance(mockWebServer.url("/"))
+    private val webservice = Webservice.create(mockWebServer.url("/"))
 
     @Test
     fun `is json decoded correctly`() {
