@@ -15,7 +15,7 @@ class Post(
         private val embedded: Embedded
 ) : ActualItem {
     fun getDateFormatted(): String {
-        return DateFormatter.format(date)
+        return DateFormatter.format(date) ?: ""
     }
 
     fun getTitle(): String {

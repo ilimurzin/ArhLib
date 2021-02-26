@@ -9,7 +9,7 @@ class PostPagingSource(
 ) : PagingSource<Int, Post>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Post> {
         try {
-            val nextPageNumber = params.key ?: 1;
+            val nextPageNumber = params.key ?: 1
             val response = webservice.getPosts(nextPageNumber)
             return LoadResult.Page(
                     data = response,

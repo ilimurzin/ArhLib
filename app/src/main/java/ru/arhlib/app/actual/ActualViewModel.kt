@@ -32,7 +32,7 @@ class ActualViewModel : ViewModel() {
     }
 
     private suspend fun getActualItems(): List<ActualItem> {
-        return webservice.getActualLinks() + webservice.getStickyPosts();
+        return webservice.getActualLinks() + webservice.getStickyPosts()
     }
 
     fun refresh() {

@@ -42,7 +42,7 @@ class AfishaActivity : AppCompatActivity() {
     }
 
     private fun getStyle(): String {
-        return "<style>" + getString(R.string.style_css) + "</style>";
+        return "<style>" + getString(R.string.style_css) + "</style>"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
