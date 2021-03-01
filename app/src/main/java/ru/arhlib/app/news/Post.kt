@@ -1,9 +1,11 @@
 package ru.arhlib.app.news
 
 import androidx.core.text.parseAsHtml
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import ru.arhlib.app.actual.ActualItem
 
+@Serializable
 class Post(
         val id: Int,
         val link: String,
@@ -11,8 +13,8 @@ class Post(
         private val title: Rendered,
         private val content: Rendered,
         private val excerpt: Rendered,
-        @SerializedName("_embedded")
-        private val embedded: Embedded
+        @SerialName("_embedded")
+        private val embedded: Embedded? = null
 ) : ActualItem {
     fun getDateFormatted(): String {
         return DateFormatter.format(date) ?: ""
@@ -39,41 +41,47 @@ class Post(
     }
 
     private fun getMediumImageUrl(): String {
-        return embedded.featuredMedia?.first()?.mediaDetails?.sizes?.mediumLarge?.sourceUrl ?: ""
+        return embedded?.featuredMedia?.first()?.mediaDetails?.sizes?.mediumLarge?.sourceUrl ?: ""
     }
 
     fun getSourceImageUrl(): String {
-        return embedded.featuredMedia?.first()?.sourceUrl ?: ""
+        return embedded?.featuredMedia?.first()?.sourceUrl ?: ""
     }
 
+    @Serializable
     class Rendered(
             val rendered: String
     )
 
+    @Serializable
     class Embedded(
-            @SerializedName("wp:featuredmedia")
-            val featuredMedia: Array<Media>?
+            @SerialName("wp:featuredmedia")
+            val featuredMedia: Array<Media>? = null
     ) {
+        @Serializable
         class Media(
-                @SerializedName("source_url")
-                val sourceUrl: String?,
+                @SerialName("source_url")
+                val sourceUrl: String? = null,
 
-                @SerializedName("media_details")
-                val mediaDetails: MediaDetails?
+                @SerialName("media_details")
+                val mediaDetails: MediaDetails? = null
         ) {
+            @Serializable
             class MediaDetails(
-                    val sizes: Sizes?
+                    val sizes: Sizes? = null
             ) {
+                @Serializable
                 class Sizes(
-                        @SerializedName("medium_large")
-                        val mediumLarge: Size?
-                )
+                        @SerialName("medium_large")
+                        val mediumLarge: Size? = null
+                ) {
+                    @Serializable
+                    class Size(
+                            @SerialName("source_url")
+                            val sourceUrl: String? = null
+                    )
+                }
             }
-
-            class Size(
-                    @SerializedName("source_url")
-                    val sourceUrl: String?
-            )
         }
     }
 }

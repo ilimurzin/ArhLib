@@ -1,7 +1,6 @@
 package ru.arhlib.app.actual
 
 import android.content.Intent
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,11 +52,11 @@ class ActualItemAdapter : ListAdapter<ActualItem, ActualItemAdapter.ActualItemVi
     private class ActualViewHolder(private val binding: ActualItemBinding) : ActualItemViewHolder(binding.root) {
         fun bind(actualLink: ActualLink) {
             binding.root.setOnClickListener { view: View -> CustomTabs.openUrl(view.context, actualLink.link) }
-            binding.emoji.text = actualLink.emoji
-            binding.emoji.isGone = TextUtils.isEmpty(actualLink.emoji)
+            binding.emoji.text = actualLink.emoji.trim()
+            binding.emoji.isGone = actualLink.emoji.trim().isEmpty()
             binding.title.text = actualLink.title
-            binding.description.text = actualLink.description
-            binding.description.isGone = TextUtils.isEmpty(actualLink.description)
+            binding.description.text = actualLink.description.trim()
+            binding.description.isGone = actualLink.description.trim().isEmpty()
         }
     }
 

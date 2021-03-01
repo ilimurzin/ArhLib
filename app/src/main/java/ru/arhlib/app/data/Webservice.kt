@@ -1,9 +1,11 @@
 package ru.arhlib.app.data
 
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
+import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -28,9 +30,11 @@ interface Webservice {
         val instance = create("https://arhlib.ru/wp-json/".toHttpUrl())
 
         fun create(httpUrl: HttpUrl): Webservice {
+            val mediaType = "application/json".toMediaType()
+            val json = Json { ignoreUnknownKeys = true }
             return Retrofit.Builder()
                     .baseUrl(httpUrl)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(json.asConverterFactory(mediaType))
                     .build()
                     .create(Webservice::class.java)
         }
