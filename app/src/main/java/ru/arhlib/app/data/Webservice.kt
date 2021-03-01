@@ -1,6 +1,7 @@
 package ru.arhlib.app.data
 
 import okhttp3.HttpUrl
+import okhttp3.HttpUrl.Companion.toHttpUrl
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -24,7 +25,7 @@ interface Webservice {
     suspend fun getActualLinks(): List<ActualLink>
 
     companion object {
-        val instance = create(HttpUrl.get("https://arhlib.ru/wp-json/"))
+        val instance = create("https://arhlib.ru/wp-json/".toHttpUrl())
 
         fun create(httpUrl: HttpUrl): Webservice {
             return Retrofit.Builder()
