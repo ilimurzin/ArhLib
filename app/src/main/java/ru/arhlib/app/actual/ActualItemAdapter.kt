@@ -102,16 +102,7 @@ class ActualItemAdapter : ListAdapter<ActualItem, ActualItemAdapter.ActualItemVi
         }
 
         override fun areContentsTheSame(oldItem: ActualItem, newItem: ActualItem): Boolean {
-            if (oldItem is Post && newItem is Post) {
-                return oldItem.getContent() == newItem.getContent()
-            }
-            if (oldItem is ActualLink && newItem is ActualLink) {
-                return oldItem.title == newItem.title
-                        && oldItem.description == newItem.description
-                        && oldItem.emoji == newItem.emoji
-                        && oldItem.link == newItem.link
-            }
-            return false
+            return oldItem.equals(newItem)
         }
     }
 }

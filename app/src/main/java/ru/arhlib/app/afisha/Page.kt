@@ -3,7 +3,7 @@ package ru.arhlib.app.afisha
 import kotlinx.serialization.Serializable
 
 @Serializable
-class Page(
+data class Page(
         val id: Int,
         private val title: Rendered,
         private val content: Rendered,
@@ -17,7 +17,7 @@ class Page(
     }
 
     @Serializable
-    class Rendered(
+    data class Rendered(
             val rendered: String,
     )
 }

@@ -3,6 +3,7 @@ package ru.arhlib.app
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.Espresso.pressBack
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.swipeRight
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -18,7 +19,8 @@ class MainActivityTest {
 
     @Test
     fun navigateThroughApplication() {
-        onView(withText(R.string.actual)).perform(click())
+        swipeRight()
+        swipeRight()
         onView(withText(R.string.services)).perform(click())
         onView(withText(R.string.contacts)).perform(click())
         pressBack()

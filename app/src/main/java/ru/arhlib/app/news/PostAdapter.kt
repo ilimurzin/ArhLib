@@ -22,7 +22,7 @@ class PostAdapter : PagingDataAdapter<Post, PostViewHolder>(PostDiffCallback) {
         }
 
         override fun areContentsTheSame(oldPost: Post, newPost: Post): Boolean {
-            return oldPost.getTitle() == newPost.getTitle() && oldPost.getExcerpt() == newPost.getExcerpt()
+            return oldPost == newPost
         }
     }
 }

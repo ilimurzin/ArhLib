@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 import ru.arhlib.app.actual.ActualItem
 
 @Serializable
-class Post(
+data class Post(
         val id: Int,
         val link: String,
         private val date: String?,
@@ -49,17 +49,17 @@ class Post(
     }
 
     @Serializable
-    class Rendered(
+    data class Rendered(
             val rendered: String
     )
 
     @Serializable
-    class Embedded(
+    data class Embedded(
             @SerialName("wp:featuredmedia")
-            val featuredMedia: Array<Media>? = null
+            val featuredMedia: List<Media>? = null
     ) {
         @Serializable
-        class Media(
+        data class Media(
                 @SerialName("source_url")
                 val sourceUrl: String? = null,
 
@@ -67,16 +67,16 @@ class Post(
                 val mediaDetails: MediaDetails? = null
         ) {
             @Serializable
-            class MediaDetails(
+            data class MediaDetails(
                     val sizes: Sizes? = null
             ) {
                 @Serializable
-                class Sizes(
+                data class Sizes(
                         @SerialName("medium_large")
                         val mediumLarge: Size? = null
                 ) {
                     @Serializable
-                    class Size(
+                    data class Size(
                             @SerialName("source_url")
                             val sourceUrl: String? = null
                     )
