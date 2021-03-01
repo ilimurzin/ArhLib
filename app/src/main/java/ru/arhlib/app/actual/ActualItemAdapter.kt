@@ -63,6 +63,7 @@ class ActualItemAdapter : ListAdapter<ActualItem, ActualItemAdapter.ActualItemVi
     private class PostViewHolder(private val binding: PostItemBinding) : ActualItemViewHolder(binding.root) {
         fun bind(post: Post) {
             binding.postTitle.text = post.getTitle()
+            binding.postTitle.isGone = post.getTitle().isEmpty()
             binding.postExcerpt.text = post.getExcerpt()
             binding.postDate.text = post.getDateFormatted()
             if (post.getImageUrl().startsWith("http")) {

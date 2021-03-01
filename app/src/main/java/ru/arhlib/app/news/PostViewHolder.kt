@@ -1,6 +1,7 @@
 package ru.arhlib.app.news
 
 import android.content.Intent
+import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
@@ -14,6 +15,7 @@ class PostViewHolder(
         if (post == null) return
 
         binding.postTitle.text = post.getTitle()
+        binding.postTitle.isGone = post.getTitle().isEmpty()
         binding.postExcerpt.text = post.getExcerpt()
         binding.postDate.text = post.getDateFormatted()
         if (post.getImageUrl().startsWith("http")) {
