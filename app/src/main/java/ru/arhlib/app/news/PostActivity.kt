@@ -71,10 +71,10 @@ class PostActivity : AppCompatActivity() {
                 true
             }
             R.id.share -> {
-                startActivity(Intent()
+                startActivity(Intent.createChooser(Intent()
                         .setAction(Intent.ACTION_SEND)
                         .putExtra(Intent.EXTRA_TEXT, getLink())
-                        .setType("text/plain"))
+                        .setType("text/plain"), null))
                 true
             }
             R.id.browser -> {

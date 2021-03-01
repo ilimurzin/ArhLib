@@ -57,10 +57,10 @@ class AfishaActivity : AppCompatActivity() {
                 true
             }
             R.id.share -> {
-                startActivity(Intent()
+                startActivity(Intent.createChooser(Intent()
                         .setAction(Intent.ACTION_SEND)
                         .putExtra(Intent.EXTRA_TEXT, getString(R.string.afisha_url))
-                        .setType("text/plain"))
+                        .setType("text/plain"), null))
                 true
             }
             R.id.browser -> {
