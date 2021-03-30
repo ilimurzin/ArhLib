@@ -27,7 +27,7 @@ interface Webservice {
     suspend fun getActualLinks(): List<ActualLink>
 
     companion object {
-        val instance = create("https://arhlib.ru/wp-json/".toHttpUrl())
+        var instance = create("https://arhlib.ru/wp-json/".toHttpUrl())
 
         fun create(httpUrl: HttpUrl): Webservice {
             val mediaType = "application/json".toMediaType()

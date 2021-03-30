@@ -15,7 +15,7 @@ import org.junit.runner.RunWith
 class MainActivityTest {
 
     @get:Rule
-    val rule: ActivityScenarioRule<MainActivity> = ActivityScenarioRule(MainActivity::class.java)
+    val rule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun navigateThroughApplication() {
@@ -30,6 +30,9 @@ class MainActivityTest {
         pressBack()
         onView(withText(R.string.afisha)).perform(click())
         pressBack()
-        onView(withText(R.string.news)).perform(click())
+        onView(withText("Новости"))
+                .perform(click())
+        onView(withText("Актуальное"))
+                .perform(click())
     }
 }
