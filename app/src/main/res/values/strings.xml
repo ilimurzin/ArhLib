@@ -23,4 +23,5 @@
 
     <string name="loading_error">Ошибка при загрузке</string>
     <string name="retry">Повторить</string>
+    <string name="empty_actual">Сейчас ничего интересного не происходит. Проверьте позже.</string>
 </resources>

@@ -18,9 +18,11 @@ class ActualFragment : Fragment() {
         viewModel.actualItems.observe(viewLifecycleOwner, { result ->
             if (result is LoadResult.Success) {
                 adapter.submitList(result.data)
+                binding.emptyActualText.isVisible = result.data.isEmpty()
+                binding.actualList.isVisible = result.data.isNotEmpty()
             }
             if (result is LoadResult.Error) {
-                adapter.submitList(emptyList())
+                binding.actualList.isVisible = false
             }
             binding.progressBar.isVisible = result is LoadResult.Loading
             binding.retryBlock.isVisible = result is LoadResult.Error

@@ -98,4 +98,14 @@ class ActualFragmentTest {
         onView(withId(R.id.retryBlock)).check(matches(not(isDisplayed())))
         onView(withText("actual link")).check(matches(isCompletelyDisplayed()))
     }
+
+    @Test
+    fun testEmptyActual() {
+        coEvery { webservice.getActualLinks() } returns emptyList()
+        coEvery { webservice.getStickyPosts() } returns emptyList()
+
+        launchFragmentInContainer<ActualFragment>()
+
+        onView(withText(R.string.empty_actual)).check(matches(isCompletelyDisplayed()))
+    }
 }
