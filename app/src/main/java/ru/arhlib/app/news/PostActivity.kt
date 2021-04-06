@@ -1,6 +1,7 @@
 package ru.arhlib.app.news
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
@@ -21,7 +22,10 @@ class PostActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        binding.postTitle.text = getPostTitle()
+
         binding.webview.webViewClient = WebViewClientWithCustomTabs()
+        binding.webview.setBackgroundColor(Color.TRANSPARENT)
         binding.webview.loadDataWithBaseURL("https://arhlib.ru/", getContent(), "text/html; charset=UTF-8", "UTF-8", null)
 
         if (getImageUrl().startsWith("http")) {
@@ -40,11 +44,13 @@ class PostActivity : AppCompatActivity() {
         }
     }
 
+    private fun getPostTitle(): String {
+        return intent.getStringExtra("title") ?: ""
+    }
+
     private fun getContent(): String {
         val style = "<style>" + getString(R.string.style_css) + "</style>"
-        val title = "<h1>" + intent.getStringExtra("title") + "</h1>"
-        val content = intent.getStringExtra("content")
-        return style + title + content
+        return style + intent.getStringExtra("content")
     }
 
     private fun getLink(): String {
